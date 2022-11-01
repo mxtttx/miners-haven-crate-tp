@@ -1,0 +1,211 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local CrateTP = Instance.new("ScreenGui")
+local Main = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local UIGradient = Instance.new("UIGradient")
+local Pattern = Instance.new("ImageLabel")
+local UICorner_2 = Instance.new("UICorner")
+local Frame = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+local On = Instance.new("TextButton")
+local UICorner_3 = Instance.new("UICorner")
+local Shadow = Instance.new("Frame")
+local UICorner_4 = Instance.new("UICorner")
+local UIGradient_2 = Instance.new("UIGradient")
+local TextLabel_2 = Instance.new("TextLabel")
+local UIGradient_3 = Instance.new("UIGradient")
+local Off = Instance.new("TextButton")
+local UICorner_5 = Instance.new("UICorner")
+local Shadow_2 = Instance.new("Frame")
+local UICorner_6 = Instance.new("UICorner")
+local UIGradient_4 = Instance.new("UIGradient")
+local TextLabel_3 = Instance.new("TextLabel")
+local UIGradient_5 = Instance.new("UIGradient")
+
+local CanCollectCrates = false
+local Boxes = game:GetService("Workspace").Boxes
+local Player = game:GetService("Players").LocalPlayer
+local Character = Player.Character
+
+--Properties:
+
+CrateTP.Name = "CrateTP"
+CrateTP.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+Main.Name = "Main"
+Main.Parent = CrateTP
+Main.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Main.Position = UDim2.new(0.825213373, 0, 0.00775195286, 0)
+Main.Size = UDim2.new(0, 339, 0, 126)
+
+UICorner.CornerRadius = UDim.new(0, 10)
+UICorner.Parent = Main
+
+UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(182, 141, 159)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(64, 96, 161))}
+UIGradient.Parent = Main
+
+Pattern.Name = "Pattern"
+Pattern.Parent = Main
+Pattern.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Pattern.BackgroundTransparency = 1.000
+Pattern.Position = UDim2.new(-0.00147492625, 0, 0, 0)
+Pattern.Size = UDim2.new(0, 339, 0, 126)
+Pattern.ZIndex = 2
+Pattern.Image = "rbxassetid://2151741365"
+Pattern.ImageTransparency = 0.600
+Pattern.ScaleType = Enum.ScaleType.Tile
+Pattern.SliceCenter = Rect.new(0, 256, 0, 256)
+Pattern.TileSize = UDim2.new(0, 250, 0, 250)
+
+UICorner_2.CornerRadius = UDim.new(0, 4)
+UICorner_2.Parent = Pattern
+
+Frame.Parent = Main
+Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame.BackgroundTransparency = 1.000
+Frame.Size = UDim2.new(0, 339, 0, 44)
+Frame.ZIndex = 3
+
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.Position = UDim2.new(0.135693222, 0, 0, 0)
+TextLabel.Size = UDim2.new(0, 247, 0, 43)
+TextLabel.ZIndex = 5
+TextLabel.Font = Enum.Font.Unknown
+TextLabel.Text = "Miners Haven Crate TP"
+TextLabel.TextColor3 = Color3.fromRGB(75, 97, 155)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextWrapped = true
+
+On.Name = "On"
+On.Parent = Main
+On.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+On.BorderSizePixel = 0
+On.Position = UDim2.new(0.0486725681, 0, 0.452380955, 0)
+On.Size = UDim2.new(0, 136, 0, 35)
+On.ZIndex = 6
+On.Font = Enum.Font.GothamMedium
+On.Text = ""
+On.TextColor3 = Color3.fromRGB(255, 255, 255)
+On.TextScaled = true
+On.TextSize = 14.000
+On.TextWrapped = true
+
+UICorner_3.Parent = On
+
+Shadow.Name = "Shadow"
+Shadow.Parent = On
+Shadow.BackgroundColor3 = Color3.fromRGB(216, 216, 216)
+Shadow.BorderSizePixel = 0
+Shadow.Size = UDim2.new(1, 0, 1, 4)
+Shadow.ZIndex = 4
+
+UICorner_4.Parent = Shadow
+
+UIGradient_2.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(69, 163, 77)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(149, 240, 148))}
+UIGradient_2.Parent = Shadow
+
+TextLabel_2.Parent = On
+TextLabel_2.AnchorPoint = Vector2.new(0.5, 0.5)
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.BackgroundTransparency = 1.000
+TextLabel_2.BorderColor3 = Color3.fromRGB(27, 42, 53)
+TextLabel_2.BorderSizePixel = 0
+TextLabel_2.Position = UDim2.new(0.5, 0, 0.5, 0)
+TextLabel_2.Size = UDim2.new(1, -20, 1, -20)
+TextLabel_2.ZIndex = 6
+TextLabel_2.Font = Enum.Font.GothamMedium
+TextLabel_2.Text = "On"
+TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.TextScaled = true
+TextLabel_2.TextSize = 14.000
+TextLabel_2.TextWrapped = true
+
+UIGradient_3.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(69, 163, 77)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(149, 240, 148))}
+UIGradient_3.Parent = On
+
+Off.Name = "Off"
+Off.Parent = Main
+Off.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Off.BorderSizePixel = 0
+Off.Position = UDim2.new(0.541297972, 0, 0.46825397, 0)
+Off.Size = UDim2.new(0, 136, 0, 35)
+Off.ZIndex = 6
+Off.Font = Enum.Font.GothamMedium
+Off.Text = ""
+Off.TextColor3 = Color3.fromRGB(255, 255, 255)
+Off.TextScaled = true
+Off.TextSize = 14.000
+Off.TextWrapped = true
+
+UICorner_5.Parent = Off
+
+Shadow_2.Name = "Shadow"
+Shadow_2.Parent = Off
+Shadow_2.BackgroundColor3 = Color3.fromRGB(216, 216, 216)
+Shadow_2.BorderSizePixel = 0
+Shadow_2.Size = UDim2.new(1, 0, 1, 4)
+Shadow_2.ZIndex = 4
+
+UICorner_6.Parent = Shadow_2
+
+UIGradient_4.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 148, 102)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(237, 102, 109))}
+UIGradient_4.Parent = Shadow_2
+
+TextLabel_3.Parent = Off
+TextLabel_3.AnchorPoint = Vector2.new(0.5, 0.5)
+TextLabel_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_3.BackgroundTransparency = 1.000
+TextLabel_3.BorderColor3 = Color3.fromRGB(27, 42, 53)
+TextLabel_3.BorderSizePixel = 0
+TextLabel_3.Position = UDim2.new(0.5, 0, 0.442857146, 0)
+TextLabel_3.Size = UDim2.new(1, -20, 1, -20)
+TextLabel_3.ZIndex = 6
+TextLabel_3.Font = Enum.Font.GothamMedium
+TextLabel_3.Text = "Off"
+TextLabel_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_3.TextScaled = true
+TextLabel_3.TextSize = 14.000
+TextLabel_3.TextWrapped = true
+
+UIGradient_5.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 148, 102)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(237, 102, 109))}
+UIGradient_5.Parent = Off
+
+--//RE EXECUTE SCRIPT TO START/STOP AUTO CRATE COLLECTING\\--
+
+
+Off.MouseButton1Click:Connect(function()
+	if CanCollectCrates == true then
+	     print("Off")
+		CanCollectCrates = false
+	end
+end)
+
+On.MouseButton1Click:Connect(function()
+	if CanCollectCrates == false then
+	    print("On")
+		CanCollectCrates = true
+	end
+end)
+
+
+
+
+
+while true do
+    if CanCollectCrates == true then
+       	for i = 1,#Boxes:GetChildren() do
+	    	for i,v in pairs(Boxes:GetChildren()) do
+				Character:SetPrimaryPartCFrame(v.CFrame)
+			end
+		wait(0.5)
+    end
+    end
+    wait(0.5)
+end
