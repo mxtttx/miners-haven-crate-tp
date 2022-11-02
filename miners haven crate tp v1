@@ -202,6 +202,7 @@ while true do
     if CanCollectCrates == true then
        	for i = 1,#Boxes:GetChildren() do
 	    	for i,v in pairs(Boxes:GetChildren()) do
+		wait(0.5)
 				Character:SetPrimaryPartCFrame(v.CFrame)
 			end
 		wait(0.5)
