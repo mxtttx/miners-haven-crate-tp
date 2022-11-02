@@ -3,6 +3,9 @@
 
 -- Instances:
 
+
+
+
 local CrateTP = Instance.new("ScreenGui")
 local Main = Instance.new("Frame")
 local UICorner = Instance.new("UICorner")
@@ -30,6 +33,11 @@ local CanCollectCrates = false
 local Boxes = game:GetService("Workspace").Boxes
 local Player = game:GetService("Players").LocalPlayer
 local Character = Player.Character
+
+if Player.PlayerGui:FindFirstChild("CrateTP") then
+Player.PlayerGui:FindFirstChild("CrateTP"):Destroy()
+CanCollectCrates = false
+end
 
 --Properties:
 
@@ -202,11 +210,11 @@ while true do
     if CanCollectCrates == true then
        	for i = 1,#Boxes:GetChildren() do
 	    	for i,v in pairs(Boxes:GetChildren()) do
-		wait(0.5)
+		wait(1)
 				Character:SetPrimaryPartCFrame(v.CFrame)
 			end
 		wait(0.5)
-    end
+   	 end
     end
     wait(0.5)
 end
