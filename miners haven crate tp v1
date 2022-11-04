@@ -44,7 +44,7 @@ end
 --Properties:
 
 CrateTP.Name = "CrateTP"
---CrateTP.Parent = game:GetService("CoreGui")
+CrateTP.Parent = game:GetService("CoreGui")
 
 Main.Name = "Main"
 Main.Parent = CrateTP
@@ -210,7 +210,7 @@ end)
 
 
 
-pcall(function())
+pcall(function()
 	while true do
 	    if CanCollectCrates == true then
 		for i = 1,#Boxes:GetChildren() do
