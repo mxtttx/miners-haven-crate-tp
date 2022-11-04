@@ -8,196 +8,413 @@ warn("//Miner's Haven Crate TP v1\\-//DO NOT USE IN PUBLIC SESSIONS!! YOU WILL G
 
 
 
-local CrateTP = Instance.new("ScreenGui")
-local Main = Instance.new("Frame")
-local UICorner = Instance.new("UICorner")
-local UIGradient = Instance.new("UIGradient")
-local Pattern = Instance.new("ImageLabel")
-local UICorner_2 = Instance.new("UICorner")
-local Frame = Instance.new("Frame")
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local CrateTP = Instance.new("Frame")
+local UISizeConstraint = Instance.new("UISizeConstraint")
+local StepFrame = Instance.new("Frame")
+local TextBody = Instance.new("TextLabel")
+local UITextSizeConstraint = Instance.new("UITextSizeConstraint")
+local Left = Instance.new("TextButton")
+local UISizeConstraint_2 = Instance.new("UISizeConstraint")
+local Image = Instance.new("ImageLabel")
+local Right = Instance.new("TextButton")
+local UISizeConstraint_3 = Instance.new("UISizeConstraint")
+local Image_2 = Instance.new("ImageLabel")
+local ListFrame = Instance.new("Frame")
+local Header = Instance.new("TextLabel")
+local List = Instance.new("Frame")
+local baseListFrame = Instance.new("Frame")
+local ItemName = Instance.new("TextLabel")
+local Price = Instance.new("TextLabel")
+local YouOwn = Instance.new("TextLabel")
+local YouNeed = Instance.new("TextLabel")
+local Cross = Instance.new("Frame")
+local Check = Instance.new("ImageLabel")
+local UIListLayout = Instance.new("UIListLayout")
+local Header_2 = Instance.new("Frame")
 local TextLabel = Instance.new("TextLabel")
-local On = Instance.new("TextButton")
-local UICorner_3 = Instance.new("UICorner")
-local Shadow = Instance.new("Frame")
-local UICorner_4 = Instance.new("UICorner")
-local UIGradient_2 = Instance.new("UIGradient")
 local TextLabel_2 = Instance.new("TextLabel")
-local UIGradient_3 = Instance.new("UIGradient")
-local Off = Instance.new("TextButton")
-local UICorner_5 = Instance.new("UICorner")
-local Shadow_2 = Instance.new("Frame")
-local UICorner_6 = Instance.new("UICorner")
-local UIGradient_4 = Instance.new("UIGradient")
 local TextLabel_3 = Instance.new("TextLabel")
-local UIGradient_5 = Instance.new("UIGradient")
-
+local TextLabel_4 = Instance.new("TextLabel")
+local TipFrame = Instance.new("Frame")
+local TextBody_2 = Instance.new("TextLabel")
+local UICorner = Instance.new("UICorner")
+local Top = Instance.new("Frame")
+local UISizeConstraint_4 = Instance.new("UISizeConstraint")
+local Title = Instance.new("TextLabel")
+local Close = Instance.new("ImageButton")
+local XButton = Instance.new("ImageLabel")
+local UICorner_2 = Instance.new("UICorner")
+local GUI = Instance.new("ScreenGui")
 local CanCollectCrates = false
-
-
-
-
-
 --Properties:
+GUI.Name = "CrateTP"
+GUI.Parent = game.CoreGui
+GUI.ZIndexBehavior = Enum.ZIndexBehavior.Global
+GUI.ResetOnSpawn = false
 
 CrateTP.Name = "CrateTP"
-CrateTP.Parent = game.CoreGui
-CrateTP.ResetOnSpawn = false
+CrateTP.Active = true
+CrateTP.Draggable = true
+CrateTP.Parent = GUI
+CrateTP.AnchorPoint = Vector2.new(0.5, 0.899999976)
+CrateTP.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
+CrateTP.BorderSizePixel = 0
+CrateTP.Position = UDim2.new(0.87129581, 0, 0.190794528, 0)
+CrateTP.Size = UDim2.new(0.239326954, 0, 0.163759694, 0)
+CrateTP.ZIndex = 5
 
-Main.Name = "Main"
-Main.Parent = CrateTP
-Main.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Main.Position = UDim2.new(0.825213373, 0, 0.00775195286, 0)
-Main.Size = UDim2.new(0, 339, 0, 126)
-Main.Active = true
-Main.Selectable = true
-Main.Draggable = true
+UISizeConstraint.Parent = CrateTP
+UISizeConstraint.MaxSize = Vector2.new(500, 220)
+UISizeConstraint.MinSize = Vector2.new(400, 150)
 
-UICorner.CornerRadius = UDim.new(0, 10)
-UICorner.Parent = Main
+StepFrame.Name = "StepFrame"
+StepFrame.Parent = CrateTP
+StepFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+StepFrame.BackgroundTransparency = 1.000
+StepFrame.Size = UDim2.new(1, 0, 1, 0)
 
-UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(182, 141, 159)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(64, 96, 161))}
-UIGradient.Parent = Main
+TextBody.Name = "TextBody"
+TextBody.Parent = StepFrame
+TextBody.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextBody.BackgroundTransparency = 1.000
+TextBody.Position = UDim2.new(0, 10, 0, 10)
+TextBody.Size = UDim2.new(1, -20, 1, -62)
+TextBody.ZIndex = 5
+TextBody.Font = Enum.Font.Gotham
+TextBody.Text = "Automatically teleport to crates around the map! Best paried with an \"Auto Crate Opener\" script."
+TextBody.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextBody.TextScaled = true
+TextBody.TextSize = 14.000
+TextBody.TextWrapped = true
+TextBody.TextXAlignment = Enum.TextXAlignment.Left
+TextBody.TextYAlignment = Enum.TextYAlignment.Top
 
-Pattern.Name = "Pattern"
-Pattern.Parent = Main
-Pattern.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Pattern.BackgroundTransparency = 1.000
-Pattern.Position = UDim2.new(-0.00147492625, 0, 0, 0)
-Pattern.Size = UDim2.new(0, 339, 0, 126)
-Pattern.ZIndex = 2
-Pattern.Image = "rbxassetid://2151741365"
-Pattern.ImageTransparency = 0.600
-Pattern.ScaleType = Enum.ScaleType.Tile
-Pattern.SliceCenter = Rect.new(0, 256, 0, 256)
-Pattern.TileSize = UDim2.new(0, 250, 0, 250)
+UITextSizeConstraint.Parent = TextBody
+UITextSizeConstraint.MaxTextSize = 25
 
-UICorner_2.CornerRadius = UDim.new(0, 4)
-UICorner_2.Parent = Pattern
+Left.Name = "Left"
+Left.Parent = StepFrame
+Left.AnchorPoint = Vector2.new(1, 0)
+Left.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Left.BackgroundTransparency = 1.000
+Left.NextSelectionRight = Right
+Left.Position = UDim2.new(1, -140, 1, -36)
+Left.Size = UDim2.new(0, 120, 0, 28)
+Left.ZIndex = 7
+Left.Font = Enum.Font.GothamBold
+Left.Text = "Start"
+Left.TextColor3 = Color3.fromRGB(255, 255, 255)
+Left.TextScaled = true
+Left.TextSize = 14.000
+Left.TextWrapped = true
 
-Frame.Parent = Main
-Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Frame.BackgroundTransparency = 1.000
-Frame.Size = UDim2.new(0, 339, 0, 44)
-Frame.ZIndex = 3
+UISizeConstraint_2.Parent = Left
+UISizeConstraint_2.MaxSize = Vector2.new(480, math.huge)
 
-TextLabel.Parent = Frame
+Image.Name = "Image"
+Image.Parent = Left
+Image.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Image.BackgroundTransparency = 1.000
+Image.Size = UDim2.new(1, 0, 1, 0)
+Image.ZIndex = 6
+Image.Image = "rbxassetid://875052259"
+Image.ImageColor3 = Color3.fromRGB(36, 194, 81)
+Image.ScaleType = Enum.ScaleType.Slice
+Image.SliceCenter = Rect.new(10, 10, 10, 10)
+
+Right.Name = "Right"
+Right.Parent = StepFrame
+Right.AnchorPoint = Vector2.new(1, 0)
+Right.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Right.BackgroundTransparency = 1.000
+Right.NextSelectionLeft = Left
+Right.Position = UDim2.new(1, -10, 1, -36)
+Right.Size = UDim2.new(0, 120, 0, 28)
+Right.ZIndex = 7
+Right.Font = Enum.Font.GothamBold
+Right.Text = "Stop"
+Right.TextColor3 = Color3.fromRGB(255, 255, 255)
+Right.TextScaled = true
+Right.TextSize = 14.000
+Right.TextWrapped = true
+
+UISizeConstraint_3.Parent = Right
+UISizeConstraint_3.MaxSize = Vector2.new(480, math.huge)
+
+Image_2.Name = "Image"
+Image_2.Parent = Right
+Image_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Image_2.BackgroundTransparency = 1.000
+Image_2.Size = UDim2.new(1, 0, 1, 0)
+Image_2.ZIndex = 6
+Image_2.Image = "rbxassetid://875052259"
+Image_2.ImageColor3 = Color3.fromRGB(127, 127, 127)
+Image_2.ScaleType = Enum.ScaleType.Slice
+Image_2.SliceCenter = Rect.new(10, 10, 10, 10)
+
+ListFrame.Name = "ListFrame"
+ListFrame.Parent = CrateTP
+ListFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ListFrame.BackgroundTransparency = 1.000
+ListFrame.Size = UDim2.new(1, 0, 1, 0)
+ListFrame.Visible = false
+
+Header.Name = "Header"
+Header.Parent = ListFrame
+Header.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Header.BackgroundTransparency = 1.000
+Header.Position = UDim2.new(0, 10, 0, 10)
+Header.Size = UDim2.new(1, -20, 0, 40)
+Header.ZIndex = 5
+Header.Font = Enum.Font.GothamBold
+Header.Text = "You need the following items:"
+Header.TextColor3 = Color3.fromRGB(255, 255, 255)
+Header.TextScaled = true
+Header.TextSize = 14.000
+Header.TextWrapped = true
+
+List.Name = "List"
+List.Parent = ListFrame
+List.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+List.BackgroundTransparency = 1.000
+List.Position = UDim2.new(0, 10, 0, 90)
+List.Size = UDim2.new(1, -20, 1, -100)
+List.ZIndex = 5
+
+baseListFrame.Name = "baseListFrame"
+baseListFrame.Parent = List
+baseListFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+baseListFrame.BackgroundTransparency = 1.000
+baseListFrame.Size = UDim2.new(1, 0, 0, 20)
+baseListFrame.ZIndex = 5
+
+ItemName.Name = "ItemName"
+ItemName.Parent = baseListFrame
+ItemName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ItemName.BackgroundTransparency = 1.000
+ItemName.Size = UDim2.new(0.25, 0, 0, 20)
+ItemName.ZIndex = 5
+ItemName.Font = Enum.Font.GothamMedium
+ItemName.Text = "Basic Conveyor"
+ItemName.TextColor3 = Color3.fromRGB(255, 255, 255)
+ItemName.TextScaled = true
+ItemName.TextSize = 20.000
+ItemName.TextWrapped = true
+
+Price.Name = "Price"
+Price.Parent = baseListFrame
+Price.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Price.BackgroundTransparency = 1.000
+Price.Position = UDim2.new(0.25, 0, 0, 0)
+Price.Size = UDim2.new(0.25, 0, 0, 20)
+Price.ZIndex = 5
+Price.Font = Enum.Font.GothamMedium
+Price.Text = "$50"
+Price.TextColor3 = Color3.fromRGB(255, 255, 255)
+Price.TextSize = 20.000
+
+YouOwn.Name = "YouOwn"
+YouOwn.Parent = baseListFrame
+YouOwn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+YouOwn.BackgroundTransparency = 1.000
+YouOwn.Position = UDim2.new(0.5, 0, 0, 0)
+YouOwn.Size = UDim2.new(0.25, 0, 0, 20)
+YouOwn.ZIndex = 5
+YouOwn.Font = Enum.Font.GothamMedium
+YouOwn.Text = "x3"
+YouOwn.TextColor3 = Color3.fromRGB(255, 255, 255)
+YouOwn.TextSize = 20.000
+
+YouNeed.Name = "YouNeed"
+YouNeed.Parent = baseListFrame
+YouNeed.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+YouNeed.BackgroundTransparency = 1.000
+YouNeed.Position = UDim2.new(0.75, 0, 0, 0)
+YouNeed.Size = UDim2.new(0.25, 0, 0, 20)
+YouNeed.ZIndex = 5
+YouNeed.Font = Enum.Font.GothamMedium
+YouNeed.Text = "x6"
+YouNeed.TextColor3 = Color3.fromRGB(255, 255, 255)
+YouNeed.TextSize = 20.000
+
+Cross.Name = "Cross"
+Cross.Parent = baseListFrame
+Cross.BackgroundColor3 = Color3.fromRGB(134, 134, 134)
+Cross.BorderSizePixel = 0
+Cross.Position = UDim2.new(0, 0, 0.5, 0)
+Cross.Size = UDim2.new(1, -30, 0, 2)
+Cross.Visible = false
+Cross.ZIndex = 5
+
+Check.Name = "Check"
+Check.Parent = baseListFrame
+Check.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Check.BackgroundTransparency = 1.000
+Check.Position = UDim2.new(1, -20, 0, 0)
+Check.Size = UDim2.new(0, 20, 0, 20)
+Check.Visible = false
+Check.ZIndex = 5
+Check.Image = "rbxassetid://1936034234"
+Check.ImageColor3 = Color3.fromRGB(130, 255, 159)
+
+UIListLayout.Parent = List
+
+Header_2.Name = "Header"
+Header_2.Parent = ListFrame
+Header_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Header_2.BackgroundTransparency = 1.000
+Header_2.Position = UDim2.new(0, 10, 0, 60)
+Header_2.Size = UDim2.new(1, -20, 0, 20)
+Header_2.ZIndex = 5
+
+TextLabel.Parent = Header_2
 TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel.BackgroundTransparency = 1.000
-TextLabel.Position = UDim2.new(0.135693222, 0, 0, 0)
-TextLabel.Size = UDim2.new(0, 247, 0, 43)
+TextLabel.Size = UDim2.new(0.25, 0, 0, 20)
 TextLabel.ZIndex = 5
-TextLabel.Font = Enum.Font.Unknown
-TextLabel.Text = "Miners Haven Crate TP"
-TextLabel.TextColor3 = Color3.fromRGB(75, 97, 155)
-TextLabel.TextScaled = true
-TextLabel.TextSize = 14.000
-TextLabel.TextWrapped = true
+TextLabel.Font = Enum.Font.GothamMedium
+TextLabel.Text = "Item"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextSize = 20.000
 
-On.Name = "On"
-On.Parent = Main
-On.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-On.BorderSizePixel = 0
-On.Position = UDim2.new(0.0486725681, 0, 0.452380955, 0)
-On.Size = UDim2.new(0, 136, 0, 35)
-On.ZIndex = 6
-On.Font = Enum.Font.GothamMedium
-On.Text = ""
-On.TextColor3 = Color3.fromRGB(255, 255, 255)
-On.TextScaled = true
-On.TextSize = 14.000
-On.TextWrapped = true
-
-UICorner_3.Parent = On
-
-Shadow.Name = "Shadow"
-Shadow.Parent = On
-Shadow.BackgroundColor3 = Color3.fromRGB(216, 216, 216)
-Shadow.BorderSizePixel = 0
-Shadow.Size = UDim2.new(1, 0, 1, 4)
-Shadow.ZIndex = 4
-
-UICorner_4.Parent = Shadow
-
-UIGradient_2.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(69, 163, 77)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(149, 240, 148))}
-UIGradient_2.Parent = Shadow
-
-TextLabel_2.Parent = On
-TextLabel_2.AnchorPoint = Vector2.new(0.5, 0.5)
+TextLabel_2.Parent = Header_2
 TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel_2.BackgroundTransparency = 1.000
-TextLabel_2.BorderColor3 = Color3.fromRGB(27, 42, 53)
-TextLabel_2.BorderSizePixel = 0
-TextLabel_2.Position = UDim2.new(0.5, 0, 0.5, 0)
-TextLabel_2.Size = UDim2.new(1, -20, 1, -20)
-TextLabel_2.ZIndex = 6
+TextLabel_2.Position = UDim2.new(0.25, 0, 0, 0)
+TextLabel_2.Size = UDim2.new(0.25, 0, 0, 20)
+TextLabel_2.ZIndex = 5
 TextLabel_2.Font = Enum.Font.GothamMedium
-TextLabel_2.Text = "On"
+TextLabel_2.Text = "Price"
 TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_2.TextScaled = true
-TextLabel_2.TextSize = 14.000
-TextLabel_2.TextWrapped = true
+TextLabel_2.TextSize = 20.000
 
-UIGradient_3.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(69, 163, 77)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(149, 240, 148))}
-UIGradient_3.Parent = On
-
-Off.Name = "Off"
-Off.Parent = Main
-Off.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Off.BorderSizePixel = 0
-Off.Position = UDim2.new(0.541297972, 0, 0.46825397, 0)
-Off.Size = UDim2.new(0, 136, 0, 35)
-Off.ZIndex = 6
-Off.Font = Enum.Font.GothamMedium
-Off.Text = ""
-Off.TextColor3 = Color3.fromRGB(255, 255, 255)
-Off.TextScaled = true
-Off.TextSize = 14.000
-Off.TextWrapped = true
-
-UICorner_5.Parent = Off
-
-Shadow_2.Name = "Shadow"
-Shadow_2.Parent = Off
-Shadow_2.BackgroundColor3 = Color3.fromRGB(216, 216, 216)
-Shadow_2.BorderSizePixel = 0
-Shadow_2.Size = UDim2.new(1, 0, 1, 4)
-Shadow_2.ZIndex = 4
-
-UICorner_6.Parent = Shadow_2
-
-UIGradient_4.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 148, 102)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(237, 102, 109))}
-UIGradient_4.Parent = Shadow_2
-
-TextLabel_3.Parent = Off
-TextLabel_3.AnchorPoint = Vector2.new(0.5, 0.5)
+TextLabel_3.Parent = Header_2
 TextLabel_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel_3.BackgroundTransparency = 1.000
-TextLabel_3.BorderColor3 = Color3.fromRGB(27, 42, 53)
-TextLabel_3.BorderSizePixel = 0
-TextLabel_3.Position = UDim2.new(0.5, 0, 0.442857146, 0)
-TextLabel_3.Size = UDim2.new(1, -20, 1, -20)
-TextLabel_3.ZIndex = 6
+TextLabel_3.Position = UDim2.new(0.5, 0, 0, 0)
+TextLabel_3.Size = UDim2.new(0.25, 0, 0, 20)
+TextLabel_3.ZIndex = 5
 TextLabel_3.Font = Enum.Font.GothamMedium
-TextLabel_3.Text = "Off"
+TextLabel_3.Text = "You Own"
 TextLabel_3.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_3.TextScaled = true
-TextLabel_3.TextSize = 14.000
-TextLabel_3.TextWrapped = true
+TextLabel_3.TextSize = 20.000
 
-UIGradient_5.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 148, 102)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(237, 102, 109))}
-UIGradient_5.Parent = Off
+TextLabel_4.Parent = Header_2
+TextLabel_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_4.BackgroundTransparency = 1.000
+TextLabel_4.Position = UDim2.new(0.75, 0, 0, 0)
+TextLabel_4.Size = UDim2.new(0.25, 0, 0, 20)
+TextLabel_4.ZIndex = 5
+TextLabel_4.Font = Enum.Font.GothamMedium
+TextLabel_4.Text = "You Need"
+TextLabel_4.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_4.TextSize = 20.000
+
+TipFrame.Name = "TipFrame"
+TipFrame.Parent = CrateTP
+TipFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TipFrame.BackgroundTransparency = 1.000
+TipFrame.Size = UDim2.new(1, 0, 1, 0)
+
+TextBody_2.Name = "TextBody"
+TextBody_2.Parent = TipFrame
+TextBody_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextBody_2.BackgroundTransparency = 1.000
+TextBody_2.Position = UDim2.new(0, 10, 0, 10)
+TextBody_2.Size = UDim2.new(1, -20, 1, -20)
+TextBody_2.ZIndex = 5
+TextBody_2.Font = Enum.Font.GothamMedium
+TextBody_2.Text = ""
+TextBody_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextBody_2.TextScaled = true
+TextBody_2.TextSize = 14.000
+TextBody_2.TextWrapped = true
+
+UICorner.Parent = CrateTP
+
+Top.Name = "Top"
+Top.Parent = CrateTP
+Top.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
+Top.BorderSizePixel = 0
+Top.Position = UDim2.new(0, 0, 0, -30)
+Top.Size = UDim2.new(0.600000024, 0, 0, 40)
+Top.ZIndex = 0
+
+UISizeConstraint_4.Parent = Top
+UISizeConstraint_4.MaxSize = Vector2.new(200, math.huge)
+
+Title.Name = "Title"
+Title.Parent = Top
+Title.AnchorPoint = Vector2.new(0.5, 0.400000006)
+Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Title.BackgroundTransparency = 1.000
+Title.Position = UDim2.new(0.5, 0, 0.400000006, 0)
+Title.Size = UDim2.new(0.899999976, 0, 0.600000024, 0)
+Title.ZIndex = 4
+Title.Font = Enum.Font.GothamBlack
+Title.Text = "Crate TP"
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.TextScaled = true
+Title.TextSize = 14.000
+Title.TextWrapped = true
+
+Close.Name = "Close"
+Close.Parent = Top
+Close.AnchorPoint = Vector2.new(0, 0.5)
+Close.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Close.BackgroundTransparency = 1.000
+Close.Position = UDim2.new(1, -14, 0.5, 0)
+Close.Size = UDim2.new(0, 60, 1, 0)
+Close.ZIndex = -1
+Close.Image = "rbxassetid://3570695787"
+Close.ImageColor3 = Color3.fromRGB(43, 43, 43)
+Close.ScaleType = Enum.ScaleType.Slice
+Close.SliceCenter = Rect.new(100, 100, 100, 100)
+Close.SliceScale = 0.080
+
+XButton.Name = "XButton"
+XButton.Parent = Close
+XButton.AnchorPoint = Vector2.new(0.5, 0.400000006)
+XButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+XButton.BackgroundTransparency = 1.000
+XButton.BorderSizePixel = 0
+XButton.Position = UDim2.new(0.5, 6, 0.400000006, 0)
+XButton.Size = UDim2.new(0.5, 0, 0.5, -2)
+XButton.Image = "http://www.roblox.com/asset/?id=132203618"
+XButton.ScaleType = Enum.ScaleType.Fit
+
+UICorner_2.Parent = Top
+
+-- Module Scripts:
+
+local fake_module_scripts = {}
+
+do -- CrateTP.tutorialFrame
+	local script = Instance.new('ModuleScript', CrateTP)
+	script.Name = "tutorialFrame"
+	local function module_script()
+		-- Decompiling is disabled
+	end
+	fake_module_scripts[script] = module_script
+end
+
 
 --//RE EXECUTE SCRIPT TO START/STOP AUTO CRATE COLLECTING\\--
 
 
-Off.MouseButton1Click:Connect(function()
+Right.MouseButton1Click:Connect(function()
 	if CanCollectCrates == true then
 		print("Off")
 		CanCollectCrates = false
 	end
 end)
 
-On.MouseButton1Click:Connect(function()
+Left.MouseButton1Click:Connect(function()
 	if CanCollectCrates == false then
 		print("On")
 		CanCollectCrates = true
@@ -215,6 +432,7 @@ pcall(function()
 		if CanCollectCrates == true then
 			for i = 1,#Boxes:GetChildren() do
 				for i,v in pairs(Boxes:GetChildren()) do
+					wait(1)
 					Character:SetPrimaryPartCFrame(v.CFrame)
 				end
 				wait(0.5)
