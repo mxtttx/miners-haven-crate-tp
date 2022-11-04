@@ -44,7 +44,7 @@ end]]
 --Properties:
 
 CrateTP.Name = "CrateTP"
-CrateTP.Parent = game:GetService("CoreGui")
+CrateTP.Parent = Player.PlayerGui
 
 Main.Name = "Main"
 Main.Parent = CrateTP
