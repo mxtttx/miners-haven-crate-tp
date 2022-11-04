@@ -1,7 +1,7 @@
 -- Gui to Lua
 -- Version: 3.2
 
-warn("//Miner's Haven Crate TP v1\\-//DO NOT USE IN PUBLIC SESSIONS!! YOU WILL GET BANNED!!\\")
+
 
 -- Instances:
 
@@ -44,7 +44,7 @@ end
 --Properties:
 
 CrateTP.Name = "CrateTP"
-CrateTP.Parent = game:GetService("CoreGui")
+--CrateTP.Parent = game:GetService("CoreGui")
 
 Main.Name = "Main"
 Main.Parent = CrateTP
