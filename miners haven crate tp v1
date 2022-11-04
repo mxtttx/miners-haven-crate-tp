@@ -51,9 +51,9 @@ Main.Parent = CrateTP
 Main.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Main.Position = UDim2.new(0.825213373, 0, 0.00775195286, 0)
 Main.Size = UDim2.new(0, 339, 0, 126)
-Main.Active = True
-Main.Selectable = True
-Main.Draggable = True
+Main.Active = true
+Main.Selectable = true
+Main.Draggable = true
 
 UICorner.CornerRadius = UDim.new(0, 10)
 UICorner.Parent = Main
@@ -195,14 +195,14 @@ UIGradient_5.Parent = Off
 
 Off.MouseButton1Click:Connect(function()
 	if CanCollectCrates == true then
-	     print("Off")
+		print("Off")
 		CanCollectCrates = false
 	end
 end)
 
 On.MouseButton1Click:Connect(function()
 	if CanCollectCrates == false then
-	    print("On")
+		print("On")
 		CanCollectCrates = true
 	end
 end)
@@ -212,15 +212,15 @@ end)
 
 pcall(function()
 	while true do
-	    if CanCollectCrates == true then
-		for i = 1,#Boxes:GetChildren() do
-			for i,v in pairs(Boxes:GetChildren()) do
-			wait(1)
+		if CanCollectCrates == true then
+			for i = 1,#Boxes:GetChildren() do
+				for i,v in pairs(Boxes:GetChildren()) do
+					wait(1)
 					Character:SetPrimaryPartCFrame(v.CFrame)
 				end
-			wait(0.5)
-		 end
-	    end
-	    wait(0.5)
+				wait(0.5)
+			end
+		end
+		wait(0.5)
 	end
 end)
