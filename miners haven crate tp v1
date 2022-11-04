@@ -44,7 +44,7 @@ end
 --Properties:
 
 CrateTP.Name = "CrateTP"
-CrateTP.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+CrateTP.Parent = game:GetService("CoreGui")
 
 Main.Name = "Main"
 Main.Parent = CrateTP
