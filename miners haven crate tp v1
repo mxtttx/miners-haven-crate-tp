@@ -1,7 +1,7 @@
 -- Gui to Lua
 -- Version: 3.2
 
-
+warn("//Miner's Haven Crate TP v1\\-//DO NOT USE IN PUBLIC SESSIONS!! YOU WILL GET BANNED!!\\")
 
 -- Instances:
 
@@ -32,19 +32,16 @@ local TextLabel_3 = Instance.new("TextLabel")
 local UIGradient_5 = Instance.new("UIGradient")
 
 local CanCollectCrates = false
-local Boxes = game:GetService("Workspace").Boxes
-local Player = game:GetService("Players").LocalPlayer
-local Character = Player.Character
 
---[[if Player.PlayerGui:FindFirstChild("CrateTP") then
-Player.PlayerGui:FindFirstChild("CrateTP"):Destroy()
-CanCollectCrates = false
-end]]
+
+
+
 
 --Properties:
 
 CrateTP.Name = "CrateTP"
-CrateTP.Parent = Player.PlayerGui
+CrateTP.Parent = game.CoreGui
+CrateTP.ResetOnSpawn = false
 
 Main.Name = "Main"
 Main.Parent = CrateTP
@@ -212,10 +209,12 @@ end)
 
 pcall(function()
 	while true do
+		local Boxes = game:GetService("Workspace").Boxes
+		local Player = game:GetService("Players").LocalPlayer
+		local Character = Player.Character
 		if CanCollectCrates == true then
 			for i = 1,#Boxes:GetChildren() do
 				for i,v in pairs(Boxes:GetChildren()) do
-					wait(1)
 					Character:SetPrimaryPartCFrame(v.CFrame)
 				end
 				wait(0.5)
