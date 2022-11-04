@@ -210,16 +210,17 @@ end)
 
 
 
-
-while true do
-    if CanCollectCrates == true then
-       	for i = 1,#Boxes:GetChildren() do
-	    	for i,v in pairs(Boxes:GetChildren()) do
-		wait(1)
-				Character:SetPrimaryPartCFrame(v.CFrame)
-			end
-		wait(0.5)
-   	 end
-    end
-    wait(0.5)
-end
+pcall(function())
+	while true do
+	    if CanCollectCrates == true then
+		for i = 1,#Boxes:GetChildren() do
+			for i,v in pairs(Boxes:GetChildren()) do
+			wait(1)
+					Character:SetPrimaryPartCFrame(v.CFrame)
+				end
+			wait(0.5)
+		 end
+	    end
+	    wait(0.5)
+	end
+end)
